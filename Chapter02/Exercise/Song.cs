@@ -13,7 +13,6 @@ namespace Exercise {
 
         //引数付きコンストラクタ
         public Song(string title, string artistname, int length) {
-
             this.Title = title;
             this.ArtistName = artistname;
             this.Length = length;
