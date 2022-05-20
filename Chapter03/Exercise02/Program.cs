@@ -8,7 +8,7 @@ namespace Exercise02 {
     class Program {
         static void Main(string[] args) {
             var names = new List<string> {
-                "Tokyo", "New Delhi", "bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong",
+                "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong",
             };
 
             Exercise2_1(names);
@@ -36,14 +36,33 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_2(List<string> names) {
-            //var count = Count( n => n.Tostring().Contains('o'));
-            //Console.WriteLine();
+            //var count  = names.Where(n => n.Contains('o')).Count();
+            var count = names.Count(n => n.Contains('o'));
+            Console.WriteLine(count);
         }
 
         private static void Exercise2_3(List<string> names) {
+            string[] selected = names.Where(s => s.Contains('o')).ToArray();  //配列として抽出
+
+            foreach(var name in selected) {
+                Console.WriteLine(name);
+            }
         }
 
         private static void Exercise2_4(List<string> names) {
+            var selected = names.Where(s => s.StartsWith("B")).Select(s => new { s.Length, s });
+
+            foreach (var name in selected) {
+                Console.WriteLine(name.Length + name.s);
+            }
+
+            /*
+            var selected = names.Where(s => s.StartsWith("B")).Select(s => s.Length + ":" + s);
+
+            foreach (var name in selected) {
+                Console.WriteLine(name);
+            }
+            */
         }
     }
 }
