@@ -9,6 +9,7 @@ namespace Exercise03 {
         static void Main(string[] args) {
             var text = "Jackdaws love my big sphinx of quartz";
 
+            #region
             Exercise3_1(text);
             Console.WriteLine("-----");
 
@@ -22,23 +23,30 @@ namespace Exercise03 {
             Console.WriteLine("-----");
 
             Exercise3_5(text);
+            #endregion
 
         }
 
         private static void Exercise3_1(string text) {
-
+            int spaces = text.Count(c => c == ' ');
+            Console.WriteLine("空白数:{0}", spaces);
         }
 
         private static void Exercise3_2(string text) {
-
+            var replaced = text.Replace("big", "small");
+            Console.WriteLine(replaced);
         }
 
         private static void Exercise3_3(string text) {
-
+            int count = text.Split(' ').Length;
+            Console.WriteLine("単語数：{0}", count);
         }
 
         private static void Exercise3_4(string text) {
-
+            var s = text.Split(' ').Where(word => word.Length <= 4);
+            foreach (var item in s) {
+                    Console.WriteLine(item);
+            }
         }
 
         private static void Exercise3_5(string text) {
