@@ -32,23 +32,33 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_2(int[] numbers) {
-            
-            for (int i = numbers.Length - 2; i < numbers.Length; i++) {
-                Console.WriteLine();
+
+            foreach (var n in numbers.Skip(numbers.Length - 2)) {
+                Console.WriteLine(n);
             }
+            
+            //for (int i = numbers.Length - 2; i < numbers.Length; i++) {
+            //    Console.WriteLine();
+            //}
         }
 
         private static void Exercise1_3(int[] numbers) {
-            var str = numbers.ToString();
-            Console.WriteLine(str);
+            var strs = numbers.Select(n => n.ToString());
+            foreach (var s in strs) {
+                Console.WriteLine(s);
+            }
+            
         }
 
         private static void Exercise1_4(int[] numbers) {
-
+            foreach (var n in numbers.OrderBy(n=>n).Take(3)) {
+                Console.WriteLine(n);
+            }
         }
 
         private static void Exercise1_5(int[] numbers) {
-
+            var count = numbers.Distinct().Count(n => n > 10);
+            Console.WriteLine(count);
         }
     }
 }
