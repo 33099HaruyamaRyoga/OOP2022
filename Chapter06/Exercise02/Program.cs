@@ -42,24 +42,38 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<Book> books) {
+            var book = books.FirstOrDefault(b => b.Title == "ワンダフル・C#ライフ");
+            if (book != null)
+                Console.WriteLine("{0} {1}", book.Price, book.Pages);
         }
 
         private static void Exercise2_2(List<Book> books) {
+            int count = books.Count(b => b.Title.Contains("C#"));
+            Console.WriteLine(count);
         }
 
         private static void Exercise2_3(List<Book> books) {
+            var average = books.Where(b => b.Title.Contains("C#")).Average(b => b.Pages);
+            Console.WriteLine(average);
+
         }
 
         private static void Exercise2_4(List<Book> books) {
+            var book = books.FirstOrDefault(b => b.Price >= 4000);
+            if (book != null)
+                Console.WriteLine(book.Title);
         }
 
         private static void Exercise2_5(List<Book> books) {
+
         }
 
         private static void Exercise2_6(List<Book> books) {
+
         }
 
         private static void Exercise2_7(List<Book> books) {
+
         }
 
         class Book {
