@@ -22,7 +22,7 @@ namespace NumberGame {
 
         private void Form1_Load(object sender, EventArgs e) {
             //乱数取得
-            randomnumber = rand.Next(minValue: 1, maxValue: (int)num2.Value + 1);
+            randomnumber = rand.Next(minValue: 1, maxValue: 50 );
         }
 
         private void Judge_Click(object sender, EventArgs e) {
