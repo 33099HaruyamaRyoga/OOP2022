@@ -117,5 +117,10 @@ namespace AddresBook {
 
             listPerson.RemoveAt(dgvPersons.CurrentRow.Index);
         }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            //削除ボタンをマスク
+            btDelete.Enabled = false;
+        }
     }
 }
