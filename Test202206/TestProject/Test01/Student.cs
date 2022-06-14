@@ -4,9 +4,9 @@
         //学生の名前
         public string Name { get; set; }
         //科目名
-        public string subject { get; set; }
+        public string Subject { get; set; }
         //点数
-        public int score { get; set; }
+        public int Score { get; set; }
 
     }
 }
