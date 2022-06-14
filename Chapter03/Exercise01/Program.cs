@@ -9,7 +9,7 @@ namespace Exercise01 {
         static void Main(string[] args) {
             var numbers = new List<int> { 12, 87, 94, 14, 53, 20, 40, 35, 76, 91, 31, 17, 48 };
 
-            /*
+            
             Exercise1_1(numbers);
             Console.WriteLine("-------------");
 
@@ -21,7 +21,7 @@ namespace Exercise01 {
 
             Exercise1_4(numbers);
             Console.WriteLine("-------------");
-            */
+            
 
             Exercise1_5(numbers);
             Console.WriteLine("-------------");
@@ -38,7 +38,7 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_6(List<int> numbers) {
-            var max = numbers.Any(n => n % 2 == 0);
+            var max = numbers.Max(n => n % 2 == 0);
             Console.WriteLine();
                 
         }
@@ -48,7 +48,7 @@ namespace Exercise01 {
             Console.WriteLine(sum);
         }
 
-        /*
+        
         private static void Exercise1_1(List<int> numbers) {
             var exist = numbers.Exists(n => n % 8 == 0 || n %  9 == 0);
             if (exist)
@@ -80,6 +80,6 @@ namespace Exercise01 {
             foreach(var n in list) {  //遅延実行（即時実行）
                 Console.WriteLine(n);
             }
-        }*/
+        }
     }
 }
