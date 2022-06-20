@@ -68,7 +68,6 @@ namespace Test02 {
             foreach (var n in numbers.Where(n => n >= 10 & n <= 50)) {
                 Console.WriteLine(n);
             }
-
         }
     }
 }
