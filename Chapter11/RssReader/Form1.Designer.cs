@@ -26,7 +26,7 @@ namespace RssReader {
         private void InitializeComponent() {
             this.btRssGet = new System.Windows.Forms.Button();
             this.cbRssUrl = new System.Windows.Forms.ComboBox();
-            this.LsBox = new System.Windows.Forms.ListBox();
+            this.lbRssTitle = new System.Windows.Forms.ListBox();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -48,20 +48,22 @@ namespace RssReader {
             this.cbRssUrl.Size = new System.Drawing.Size(769, 20);
             this.cbRssUrl.TabIndex = 1;
             // 
-            // LsBox
+            // lbRssTitle
             // 
-            this.LsBox.FormattingEnabled = true;
-            this.LsBox.ItemHeight = 12;
-            this.LsBox.Location = new System.Drawing.Point(12, 52);
-            this.LsBox.Name = "LsBox";
-            this.LsBox.Size = new System.Drawing.Size(225, 628);
-            this.LsBox.TabIndex = 2;
+            this.lbRssTitle.FormattingEnabled = true;
+            this.lbRssTitle.ItemHeight = 12;
+            this.lbRssTitle.Location = new System.Drawing.Point(12, 52);
+            this.lbRssTitle.Name = "lbRssTitle";
+            this.lbRssTitle.Size = new System.Drawing.Size(225, 628);
+            this.lbRssTitle.TabIndex = 2;
+            this.lbRssTitle.Click += new System.EventHandler(this.lsRssTitle_Click);
             // 
             // wbBrowser
             // 
             this.wbBrowser.Location = new System.Drawing.Point(253, 52);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
+            this.wbBrowser.ScriptErrorsSuppressed = true;
             this.wbBrowser.Size = new System.Drawing.Size(609, 628);
             this.wbBrowser.TabIndex = 3;
             // 
@@ -71,7 +73,7 @@ namespace RssReader {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 708);
             this.Controls.Add(this.wbBrowser);
-            this.Controls.Add(this.LsBox);
+            this.Controls.Add(this.lbRssTitle);
             this.Controls.Add(this.cbRssUrl);
             this.Controls.Add(this.btRssGet);
             this.Name = "Form1";
@@ -84,7 +86,7 @@ namespace RssReader {
 
         private System.Windows.Forms.Button btRssGet;
         private System.Windows.Forms.ComboBox cbRssUrl;
-        private System.Windows.Forms.ListBox LsBox;
+        private System.Windows.Forms.ListBox lbRssTitle;
         private System.Windows.Forms.WebBrowser wbBrowser;
     }
 }
