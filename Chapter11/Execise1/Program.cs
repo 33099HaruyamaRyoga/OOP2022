@@ -23,25 +23,51 @@ namespace Execise1 {
         }
 
         private static void Exercise1_1(string file) {
-            var xdoc = XDocument.Load("Sample.xml");
-            var novelists = xdoc.Root.Elements()
+            var xdoc = XDocument.Load(file);
+            var sports = xdoc.Root.Elements()
                                 .Select(x => new {
-                                    Name = (string)x.Element("name"),
-                                    TeamMember = (string)x.Element("teammembers")
+                                    Name = x.Element("name").Value,
+                                    TeamMember = x.Element("teammembers").Value
                                 });
-            foreach (var novelist in novelists) {
-                Console.WriteLine("{0} {1}", novelist.Name, novelist.TeamMember);
+            foreach (var sport in sports) {
+                Console.WriteLine("{0} {1}", sport.Name, sport.TeamMember);
             }
         }
 
         private static void Exercise1_2(string file) {
-
+            var xdoc = XDocument.Load(file);
+            var sports = xdoc.Root.Elements()
+                                .Select(x => new {
+                                    Firstplayed = x.Element("firstplayed").Value,
+                                    Name = x.Element("name").Attribute("kanji").Value
+                                })
+                                .OrderBy(x => int.Parse(x.Firstplayed));
+            foreach (var sport in sports) {
+                Console.WriteLine("{0} ({1})", sport.Name, sport.Firstplayed);
+            }
         }
 
         private static void Exercise1_3(string file) {
+            var xdoc = XDocument.Load(file);
+            var sport = xdoc.Root.Elements()
+                                .Select(x => new {
+                                    Name = x.Element("name").Value,
+                                    Teammembers = x.Element("teammembers").Value
+                                })
+                                .OrderByDescending(x => int.Parse(x.Teammembers)).FirstOrDefault();
+
+            Console.WriteLine("{0} ({1}人)", sport.Name, sport.Teammembers);
         }
 
         private static void Exercise1_4(string file, string newfile) {
+            var element = new XElement("ballsports",
+                 new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
+                 new XElement("teammembers", "11"),
+                 new XElement("firstplayed", "1863")
+            );
+
+            
+
         }
     }
 }
