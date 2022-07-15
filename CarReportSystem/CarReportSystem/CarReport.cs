@@ -19,6 +19,8 @@ namespace CarReportSystem {
         public string Report { get; set; } //レポート
         [System.ComponentModel.DisplayName("画像")]
         public Image Picture { get; set; } //画像
+        [System.ComponentModel.DisplayName("登録日")]
+        public DateTime Registration { get; set; }
 
         //メーカー
         public enum MakerGroup {
