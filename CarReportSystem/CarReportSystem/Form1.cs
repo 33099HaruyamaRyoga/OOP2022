@@ -201,6 +201,10 @@ namespace CarReportSystem {
             }
             EnabledCheck(); //マスク処理呼び出し
         }
-    
+
+        private void btClose_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
     }
 }
