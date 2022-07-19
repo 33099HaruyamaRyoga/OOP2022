@@ -12,8 +12,10 @@ using System.Windows.Forms;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
+        Settings settings = new Settings();
 
         BindingList<CarReport> listCarReports = new BindingList<CarReport>();
+
         public Form1() {
             InitializeComponent();
             dgvCarReports.DataSource = listCarReports;
@@ -206,5 +208,19 @@ namespace CarReportSystem {
             this.Close();
         }
 
+        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e) {
+            if(cdColorSelect.ShowDialog() == DialogResult.OK) {
+                BackColor = cdColorSelect.Color;
+                settings.MainFormColor = cdColorSelect.Color;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            EnabledCheck();
+        }
+
+        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }
