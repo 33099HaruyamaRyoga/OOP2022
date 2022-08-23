@@ -9,6 +9,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
@@ -67,7 +69,7 @@ namespace CarReportSystem {
             //デフォルトの戻りを設定
             var selectedKindNumber = CarReport.MakerGroup.その他;
 
-            if (rbToyota.Checked){
+            if (rbToyota.Checked) {
                 selectedKindNumber = CarReport.MakerGroup.トヨタ;
             }
             if (rbNissan.Checked) {
@@ -161,6 +163,9 @@ namespace CarReportSystem {
             }
         }
 
+        private void btClose_Click(object sender, EventArgs e) {
+            this.Close();
+        }
 
         private void btSave_Click(object sender, EventArgs e) {
             if (sfdSaveDialog.ShowDialog() == DialogResult.OK) {
@@ -204,18 +209,33 @@ namespace CarReportSystem {
             EnabledCheck(); //マスク処理呼び出し
         }
 
-        private void btClose_Click(object sender, EventArgs e) {
-            this.Close();
-        }
+        
 
         private void 設定ToolStripMenuItem_Click(object sender, EventArgs e) {
-            if(cdColorSelect.ShowDialog() == DialogResult.OK) {
+            if (cdColorSelect.ShowDialog() == DialogResult.OK) {
                 BackColor = cdColorSelect.Color;
-                settings.MainFormColor = cdColorSelect.Color;
+                settings.MainFormColor = cdColorSelect.Color.ToArgb();
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+
+            //設定ファイルをシリアル化
+            using (var writer = XmlWriter.Create("settings.xml")) {
+                var serializer = new XmlSerializer(settings.GetType());
+                serializer.Serialize(writer, settings);
             }
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+
+            //設定ファイルを逆シリアル化して背景の色を設定
+            using (var reader = XmlReader.Create("settings.xml")) {
+                var serializer = new XmlSerializer(typeof(Settings));
+                settings = serializer.Deserialize(reader) as Settings;
+                BackColor = Color.FromArgb(settings.MainFormColor);
+            }
+
             EnabledCheck();
         }
 
