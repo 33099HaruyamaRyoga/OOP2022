@@ -288,6 +288,23 @@ namespace CarReportSystem {
             carReportDBTableAdapter.FillByAuthor(infosys202210DataSet.CarReportDB, tbAuthorSerch.Text);
         }
 
-        
+        private void carReportDBDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+            if (carReportDBDataGridView.CurrentRow == null)
+                return;
+            //データグリットビューの選択レコードを描くテキストボックスへ設定
+            //dtpRegistDate.Value = carReportDBDataGridView.CurrentRow.Cells[1].Value;
+            cbAuthor.Text = carReportDBDataGridView.CurrentRow.Cells[2].Value.ToString();
+            //GetRadioButtonMakerGroup() = carReportDBDataGridView.CurrentRow.Cells[3].Value.ToString();
+            cbCarName.Text = carReportDBDataGridView.CurrentRow.Cells[4].Value.ToString();
+            tbReport.Text = carReportDBDataGridView.CurrentRow.Cells[5].Value.ToString();
+            if (!(carReportDBDataGridView.CurrentRow.Cells[6].Value is DBNull))
+                pbPicture.Image = ByteArrayToImage((byte[])carReportDBDataGridView.CurrentRow.Cells[6].Value);
+            else
+                pbPicture.Image = null;
+        }
+
+        private void バージョンToolStripMenuItem_Click(object sender, EventArgs e) {
+            new Version().ShowDialog();
+        }
     }
 }
