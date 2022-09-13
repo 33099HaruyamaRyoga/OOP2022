@@ -32,10 +32,30 @@ namespace CarReportSystem {
             pbPicture.Image = null;
         }
 
+        // バイト配列をImageオブジェクトに変換
+        public static Image ByteArrayToImage(byte[] b) {
+            ImageConverter imgconv = new ImageConverter();
+            Image img = (Image)imgconv.ConvertFrom(b);
+            return img;
+        }
+
         private void btAddPerson_Click(object sender, EventArgs e) {
 
+            DataRow newRow = infosys202210DataSet.CarReportDB.NewRow();
+            newRow[1] = dtpRegistDate.Value;
+            newRow[2] = cbAuthor.Text;
+            newRow[3] = GetRadioButtonMakerGroup();
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbReport.Text;
+            newRow[6] = pbPicture.Image;
+            //データセットへ新しいコードを追加
+            infosys202210DataSet.CarReportDB.Rows.Add(newRow);
+            //データベース更新
+            this.carReportDBTableAdapter.Update(this.infosys202210DataSet.CarReportDB);
+
+
             //氏名が未入力なら登録しない
-            if (String.IsNullOrWhiteSpace(cbAuther.Text)) {
+            /*if (String.IsNullOrWhiteSpace(cbAuthor.Text)) {
                 MessageBox.Show("記録者が入力されていません");
                 return;
             }
@@ -43,7 +63,7 @@ namespace CarReportSystem {
             CarReport newCarReport = new CarReport {
 
                 Date = dtpRegistDate.Value,
-                Auther = cbAuther.Text,
+                Auther = cbAuthor.Text,
                 CarName = cbCarName.Text,
                 Report = tbReport.Text,
                 Picture = pbPicture.Image,
@@ -54,8 +74,8 @@ namespace CarReportSystem {
 
             EnabledCheck();
 
-            setcbAuter(cbAuther.Text);
-            setcbCarName(cbCarName.Text);
+            setcbAuter(cbAuthor.Text);
+            setcbCarName(cbCarName.Text); */
 
         }
         private void EnabledCheck() {
@@ -94,7 +114,7 @@ namespace CarReportSystem {
 
             int index = dgvCarReports.CurrentRow.Index;
 
-            cbAuther.Text = listCarReports[index].Auther;
+            cbAuthor.Text = listCarReports[index].Auther;
             cbCarName.Text = listCarReports[index].CarName;
             tbReport.Text = listCarReports[index].Report;
             pbPicture.Image = listCarReports[index].Picture;
@@ -132,13 +152,24 @@ namespace CarReportSystem {
 
         private void btUpdate_Click(object sender, EventArgs e) {
 
-            listCarReports[dgvCarReports.CurrentRow.Index].Auther = cbAuther.Text;
-            listCarReports[dgvCarReports.CurrentRow.Index].CarName = cbCarName.Text;
-            listCarReports[dgvCarReports.CurrentRow.Index].Report = tbReport.Text;
-            listCarReports[dgvCarReports.CurrentRow.Index].Maker = GetRadioButtonMakerGroup();
-            listCarReports[dgvCarReports.CurrentRow.Index].Picture = pbPicture.Image;
-            listCarReports[dgvCarReports.CurrentRow.Index].Registration = dtpRegistDate.Value;
-            dgvCarReports.Refresh();//データグリッドビュー更新
+            carReportDBDataGridView.CurrentRow.Cells[1].Value = dtpRegistDate.Value;
+            carReportDBDataGridView.CurrentRow.Cells[2].Value = cbAuthor.Text;
+            carReportDBDataGridView.CurrentRow.Cells[3].Value = GetRadioButtonMakerGroup();
+            carReportDBDataGridView.CurrentRow.Cells[4].Value = cbCarName.Text;
+            carReportDBDataGridView.CurrentRow.Cells[5].Value = tbReport.Text;
+            carReportDBDataGridView.CurrentRow.Cells[6].Value = pbPicture.Image;
+            //listCarReports[dgvCarReports.CurrentRow.Index].Auther = cbAuthor.Text;
+            //listCarReports[dgvCarReports.CurrentRow.Index].CarName = cbCarName.Text;
+            //listCarReports[dgvCarReports.CurrentRow.Index].Report = tbReport.Text;
+            //listCarReports[dgvCarReports.CurrentRow.Index].Maker = GetRadioButtonMakerGroup();
+            //listCarReports[dgvCarReports.CurrentRow.Index].Picture = pbPicture.Image;
+            //listCarReports[dgvCarReports.CurrentRow.Index].Registration = dtpRegistDate.Value;
+            //dgvCarReports.Refresh();//データグリッドビュー更新
+
+            //データセットの中をデータベースへ反映（保存）
+            this.Validate();
+            this.carReportDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202210DataSet);
         }
 
         //削除ボタンが押された時の処理
@@ -150,9 +181,9 @@ namespace CarReportSystem {
 
         private void setcbAuter(String Auther) {
 
-            if (!cbAuther.Items.Contains(Auther)) {
+            if (!cbAuthor.Items.Contains(Auther)) {
 
-                cbAuther.Items.Add(Auther);
+                cbAuthor.Items.Add(Auther);
             }
         }
         private void setcbCarName(String CarName) {
@@ -244,5 +275,19 @@ namespace CarReportSystem {
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void データベース接続ToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.carReportDBTableAdapter.Fill(this.infosys202210DataSet.CarReportDB);
+        }
+
+        private void carReportDBDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) {
+
+        }
+
+        private void btAuthorSerch_Click(object sender, EventArgs e) {
+            carReportDBTableAdapter.FillByAuthor(infosys202210DataSet.CarReportDB, tbAuthorSerch.Text);
+        }
+
+        
     }
 }

@@ -92,6 +92,10 @@ namespace AddressBook {
             DataRow newRow = infosys202210DataSet.AddressTable.NewRow();
             newRow[1] = tbName.Text;
             newRow[2] = tbAddress.Text;
+            newRow[3] = tbTell.Text;
+            newRow[4] = tbMail.Text;
+            newRow[5] = tbMemo.Text;
+            newRow[6] = ImageToByteArray(pbImage.Image);
             //データセットへ新しいコードを追加
             infosys202210DataSet.AddressTable.Rows.Add(newRow);
             //データベース更新
@@ -122,5 +126,6 @@ namespace AddressBook {
         private void 終了XToolStripMenuItem_Click(object sender, EventArgs e) {
             this.Close();
         }
+
     }
 }
