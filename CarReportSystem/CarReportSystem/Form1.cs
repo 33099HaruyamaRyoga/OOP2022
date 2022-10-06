@@ -239,6 +239,7 @@ namespace CarReportSystem {
             }
             catch(Exception) {
             }
+            EnabledCheck();
         }
 
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e) {
