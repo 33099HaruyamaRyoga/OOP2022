@@ -48,20 +48,23 @@ namespace Chapter15 {
             var selected = Library.Books
                 .OrderBy(b => b.CategoryId)
                 .ThenBy(b => b.PublishedYear)
-                .Join(Library.Categories,
-                        book => book.CategoryId,
-                        category => category.Id,
+                .Join(Library.Categories,           //結合する2番目のシーケンス
+                        book => book.CategoryId,    //対象シーケンスの結合キー
+                        category => category.Id,    //２番目のシーケンスの結合キー
                         (book, category) => new {
                             Title = book.Title,
                             Category = category.Name,
-                            PublishedYear = book.PublishedYear
+                            PublishedYear = book.PublishedYear,
+                            price = book.Price,
                         }
-                 );
+                 ).ToList();
 
-            foreach(var book in selected) {
-                Console.WriteLine($"{book.PublishedYear}, {book.Title}, {book.Category}");
+            foreach(var book in selected
+                                    .OrderByDescending(x => x.PublishedYear)
+                                    .ThenBy(x => x.Category)){
+                Console.WriteLine($"{book.PublishedYear}年, {book.Title}, {book.Category}, {book.price}円");
             }
-
+            Console.WriteLine($"金額の合計{selected.Sum(b => b.price)}円");
         }
     }
 }
