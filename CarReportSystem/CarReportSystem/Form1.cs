@@ -50,12 +50,12 @@ namespace CarReportSystem {
         private void btAddPerson_Click(object sender, EventArgs e) {
 
             DataRow newRow = infosys202210DataSet.CarReportDB.NewRow();
-            newRow[0] = dtpRegistDate.Value;
-            newRow[1] = cbAuthor.Text;
-            newRow[2] = GetRadioButtonMakerGroup();
-            newRow[3] = cbCarName.Text;
-            newRow[4] = tbReport.Text;
-            newRow[5] = ImageToByteArray(pbPicture.Image);
+            newRow[1] = dtpRegistDate.Value;
+            newRow[2] = cbAuthor.Text;
+            newRow[3] = GetRadioButtonMakerGroup();
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbReport.Text;
+            newRow[6] = ImageToByteArray(pbPicture.Image);
             //データセットへ新しいコードを追加
             infosys202210DataSet.CarReportDB.Rows.Add(newRow);
             //データベース更新
@@ -163,12 +163,12 @@ namespace CarReportSystem {
 
         private void btUpdate_Click(object sender, EventArgs e) {
 
-            carReportDBDataGridView.CurrentRow.Cells[0].Value = dtpRegistDate.Value;
-            carReportDBDataGridView.CurrentRow.Cells[1].Value = cbAuthor.Text;
-            carReportDBDataGridView.CurrentRow.Cells[2].Value = GetRadioButtonMakerGroup();
-            carReportDBDataGridView.CurrentRow.Cells[3].Value = cbCarName.Text;
-            carReportDBDataGridView.CurrentRow.Cells[4].Value = tbReport.Text;
-            carReportDBDataGridView.CurrentRow.Cells[5].Value = ImageToByteArray(pbPicture.Image);
+            carReportDBDataGridView.CurrentRow.Cells[1].Value = dtpRegistDate.Value;
+            carReportDBDataGridView.CurrentRow.Cells[2].Value = cbAuthor.Text;
+            carReportDBDataGridView.CurrentRow.Cells[3].Value = GetRadioButtonMakerGroup();
+            carReportDBDataGridView.CurrentRow.Cells[4].Value = cbCarName.Text;
+            carReportDBDataGridView.CurrentRow.Cells[5].Value = tbReport.Text;
+            carReportDBDataGridView.CurrentRow.Cells[6].Value = ImageToByteArray(pbPicture.Image);
             //listCarReports[dgvCarReports.CurrentRow.Index].Auther = cbAuthor.Text;
             //listCarReports[dgvCarReports.CurrentRow.Index].CarName = cbCarName.Text;
             //listCarReports[dgvCarReports.CurrentRow.Index].Report = tbReport.Text;
@@ -310,12 +310,12 @@ namespace CarReportSystem {
             if (carReportDBDataGridView.CurrentRow == null)
                 return;
             //データグリットビューの選択レコードを描くテキストボックスへ設定
-            dtpRegistDate.Value = (DateTime)carReportDBDataGridView.CurrentRow.Cells[0].Value;
-            cbAuthor.Text = carReportDBDataGridView.CurrentRow.Cells[1].Value.ToString();
-            setMakerRadioSet(carReportDBDataGridView.CurrentRow.Cells[2].Value.ToString());
-            cbCarName.Text = carReportDBDataGridView.CurrentRow.Cells[3].Value.ToString();
-            tbReport.Text = carReportDBDataGridView.CurrentRow.Cells[4].Value.ToString();
-            if (!(carReportDBDataGridView.CurrentRow.Cells[5].Value is DBNull))
+            dtpRegistDate.Value = (DateTime)carReportDBDataGridView.CurrentRow.Cells[1].Value;
+            cbAuthor.Text = carReportDBDataGridView.CurrentRow.Cells[2].Value.ToString();
+            setMakerRadioSet(carReportDBDataGridView.CurrentRow.Cells[3].Value.ToString());
+            cbCarName.Text = carReportDBDataGridView.CurrentRow.Cells[4].Value.ToString();
+            tbReport.Text = carReportDBDataGridView.CurrentRow.Cells[5].Value.ToString();
+            if (!(carReportDBDataGridView.CurrentRow.Cells[6].Value is DBNull))
                 pbPicture.Image = ByteArrayToImage((byte[])carReportDBDataGridView.CurrentRow.Cells[5].Value);
             else
                 pbPicture.Image = null;
