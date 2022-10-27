@@ -5,30 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Collor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="500">
+        Title="MainWindow" Height="300" Width="690" FontFamily="Segoe UI Light" Loaded="Window_Loaded">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions >
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="" HorizontalAlignment="Center" Width="200" Height="200" Margin="30" Grid.RowSpan="6" Background="LightGray"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="1" TextWrapping="Wrap" Text="R" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="2" TextWrapping="Wrap" Text="G" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="3" TextWrapping="Wrap" Text="B" VerticalAlignment="Top"/>
-        <Slider Grid.Column="1" HorizontalAlignment="Left" Margin="62,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
-        <Slider Grid.Column="1" HorizontalAlignment="Left" Margin="62,12,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120"/>
-        <Slider Grid.Column="1" HorizontalAlignment="Left" Margin="62,12,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120
-                "/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="186,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="186,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="186,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="ColorLabel"  Grid.Column="0" Content="" HorizontalAlignment="Center" Width="200" Height="200" Margin="30" Grid.RowSpan="6" Background="LightGray"/>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="1" TextWrapping="Wrap" Text="R" VerticalAlignment="Top"/>
+            <Slider x:Name="rSlider" Grid.Column="1" HorizontalAlignment="Left" Margin="40,12,0,0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="rValue" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="{Binding ElementName=rSlider, Path=Value}"/>
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="2" TextWrapping="Wrap" Text="G" VerticalAlignment="Top"/>
+            <Slider x:Name="gSlider" Grid.Column="1" HorizontalAlignment="Left" Margin="40,12,0,0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Row="2" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="gValue" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="165,12,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="{Binding ElementName=gSlider, Path=Value}"/>
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" Grid.Row="3" TextWrapping="Wrap" Text="B" VerticalAlignment="Top"/>
+            <Slider x:Name="bSlider" Grid.Column="1" HorizontalAlignment="Left" Margin="40,12,0,0" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Row="3" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="bValue" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="{Binding ElementName=bSlider, Path=Value}"/>
+
+            <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="40,11,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="155" Grid.Column="1" Grid.Row="4"
+                      VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
+                
+                
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black" >
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,5" Click="stockButton_Click" />
+            <ListBox x:Name="stockList" Grid.Row="1" Margin="10"/>
+        </Grid>
+
     </Grid>
+
 </Window>
