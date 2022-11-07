@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 namespace ColorChecker {
     public partial class MainWindow : Window {
 
+        //MyColor myColor = new List<MyColor>();
         //コンストラクタ
         public MainWindow() {
             InitializeComponent();
@@ -60,6 +61,39 @@ namespace ColorChecker {
         }
 
         private void stockButton_Click(object sender, RoutedEventArgs e) {
+            //正解
+            MyColor stColor = new MyColor();
+            var r = byte.Parse(rValue.Text);
+            var g = byte.Parse(gValue.Text);
+            var b = byte.Parse(bValue.Text);
+            stColor.Color = Color.FromRgb(r, g, b);
+
+            var colorName = ((IEnumerable<MyColor>)DataContext)
+                                .Where(c => c.Color.R == stColor.Color.R &&
+                                            c.Color.G == stColor.Color.G &&
+                                            c.Color.B == stColor.Color.B ).FirstOrDefault();
+
+            stockList.Items.Add(colorName?.Name ?? "R：" + rValue.Text + "　G：" + gValue.Text + "　B：" + bValue.Text);
+            //stockList.Items.Add(rValue.Text);
+            //stockList.Items.Add(gValue.Text);
+            //stockList.Items.Add(bValue.Text);
+
+            //rValue.Text = stockList.SelectedItem.ToString();
+            //gValue.Text = stockList.SelectedItem.ToString();
+            //bValue.Text = stockList.SelectedItem.ToString();
+
+            //if (stockList.Items.Contains(rValue.Text) != true) {
+            //    stockList.Items.Add(rValue.Text);
+            //}
+            //if (stockList.Items.Contains(gValue.Text) != true) {
+            //    stockList.Items.Add(gValue.Text);
+            //}
+            //if (stockList.Items.Contains(bValue.Text) != true) {
+            //    stockList.Items.Add(bValue.Text);
+            //}
+        }
+
+        private void stockList_SelectionChanged(object sender, SelectionChangedEventArgs e) {
 
         }
     }
