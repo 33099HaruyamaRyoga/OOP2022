@@ -17,16 +17,18 @@ using System.Windows.Shapes;
 namespace ColorChecker {
     public partial class MainWindow : Window {
 
-        //MyColor myColor = new List<MyColor>();
+        List<MyColor> colorList = new List<MyColor>();
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
+            setColor();
+        }
+
         //コンストラクタ
         public MainWindow() {
             InitializeComponent();
 
             DataContext = GetColorList();
-
         }
-
-
 
         /// <summary>
         /// すべての色を取得するメソッド
@@ -35,10 +37,6 @@ namespace ColorChecker {
         private MyColor[] GetColorList() {
             return typeof(Colors).GetProperties(BindingFlags.Public | BindingFlags.Static)
                 .Select(i => new MyColor() { Color = (Color)i.GetValue(null), Name = i.Name }).ToArray();
-        }
-
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            setColor();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
@@ -94,7 +92,16 @@ namespace ColorChecker {
         }
 
         private void stockList_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            rSlider.Value = colorList[stockList.SelectedIndex].Color.R;
+            gSlider.Value = colorList[stockList.SelectedIndex].Color.G;
+            bSlider.Value = colorList[stockList.SelectedIndex].Color.B;
+            setColor();
+        }
 
+        private void deleteButton_Click(object sender, RoutedEventArgs e) {
+            int sel = stockList.SelectedIndex;
+
+            stockList.Items.RemoveAt(sel);
         }
     }
 

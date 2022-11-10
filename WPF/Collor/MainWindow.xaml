@@ -45,8 +45,8 @@
 
             <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="40,11,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="155" Grid.Column="1" Grid.Row="4"
                       VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
-                
-                
+
+
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -69,8 +69,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,5" Click="stockButton_Click" />
+            <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,5,127,5" Click="stockButton_Click" />
             <ListBox x:Name="stockList" Grid.Row="1" Margin="10" SelectionChanged="stockList_SelectionChanged"/>
+            <Button x:Name="deleteButton" Content="DELETE" HorizontalAlignment="Left" Margin="127,5,0,0" VerticalAlignment="Top" Width="90" Height="35" FontSize="20" Click="deleteButton_Click"/>
         </Grid>
 
     </Grid>
