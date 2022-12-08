@@ -13,7 +13,7 @@ namespace WeatherApp {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 天気予報アプリ());
+            Application.Run(new Form1());
         }
     }
 }

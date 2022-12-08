@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -11,34 +12,42 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WeatherApp {
-    public partial class 天気予報アプリ : Form {
-        public 天気予報アプリ() {
+    public partial class Form1 : Form {
+
+        private Dictionary<string, string> dic = new Dictionary<string, string>();
+
+        public Form1() {
             InitializeComponent();
         }
 
-        private void btWeatherGet_Click(object sender, EventArgs e) {
-
-            var wc = new WebClient() {
-                Encoding = Encoding.UTF8
-            };
-
-            var dString = wc.DownloadString("https://weather.tsukumijima.net/api/forecast/city/370000");
-
-            var json = JsonConvert.DeserializeObject<Rootobject>(dString);
-
-            //tbWeatherInfo.Text = json.description.bodyText;
-
+        private void Form1_Load_Load(object sender, EventArgs e) {
+            StreamReader sr = new StreamReader(@"areacode.csv", Encoding.GetEncoding("Shift_JIS"));
+            {
+                while (!sr.EndOfStream) {                  
+                    string Line = sr.ReadLine();
+                    string[] Values = Line.Split(',');
+                    dic.Add($"{Values[0]}", $"{Values[1]}");
+                }
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void tvArea_AfterSelect(object sender, TreeViewEventArgs e) {
+            try {
+                var value = dic.FirstOrDefault(x => x.Key.Equals(tvArea.SelectedNode.Text)).Value;
+                if (value == null) return;
 
-            Tohoku tohoku = new Tohoku();
-            tohoku.Show();
+                var wc = new WebClient() { Encoding = Encoding.UTF8 };
+
+                var wString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/forecast/{value}.json");
+                var wString_3days = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{value}.json");
+            }
+            catch (Exception) {
+
+            }
         }
 
-        private void 天気予報アプリ_Load(object sender, EventArgs e) {
-            plMap.BackgroundImageLayout = ImageLayout.Zoom;
-            plMap.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\infosys\Pictures\map-japan-10006.png");
+        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }
