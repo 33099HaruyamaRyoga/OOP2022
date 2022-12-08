@@ -40,6 +40,8 @@ namespace WeatherApp {
 
                 var wString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/forecast/{value}.json");
                 var wString_3days = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{value}.json");
+
+                var json_weather = JsonConvert.DeserializeObject<Class1[]>(wString);
             }
             catch (Exception) {
 
