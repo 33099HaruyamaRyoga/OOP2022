@@ -73,9 +73,39 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap free2_77 {
+            get {
+                object obj = ResourceManager.GetObject("free2-77", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap ダウンロード {
             get {
                 object obj = ResourceManager.GetObject("ダウンロード", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap てるてる坊主_1024x1024 {
+            get {
+                object obj = ResourceManager.GetObject("てるてる坊主-1024x1024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap 曇りのち晴れ_1024x1024 {
+            get {
+                object obj = ResourceManager.GetObject("曇りのち晴れ-1024x1024", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

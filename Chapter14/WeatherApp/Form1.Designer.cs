@@ -184,10 +184,16 @@ namespace WeatherApp {
             this.tb1 = new System.Windows.Forms.TextBox();
             this.tb2 = new System.Windows.Forms.TextBox();
             this.tb3 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tvArea
@@ -196,131 +202,131 @@ namespace WeatherApp {
             this.tvArea.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvArea.Location = new System.Drawing.Point(2, 30);
             this.tvArea.Name = "tvArea";
-            treeNode1.Name = "ノード0";
+            treeNode1.Name = "h1";
             treeNode1.Text = "宗谷地方";
-            treeNode2.Name = "ノード1";
+            treeNode2.Name = "h2";
             treeNode2.Text = "上川・留萌地方";
-            treeNode3.Name = "ノード2";
+            treeNode3.Name = "h3";
             treeNode3.Text = "網走・北見・紋別地方";
-            treeNode4.Name = "ノード3";
+            treeNode4.Name = "h4";
             treeNode4.Text = "十勝地方";
-            treeNode5.Name = "ノード8";
+            treeNode5.Name = "h5";
             treeNode5.Text = "釧路・根室地方";
-            treeNode6.Name = "ノード9";
+            treeNode6.Name = "h6";
             treeNode6.Text = "胆振・日高地方";
-            treeNode7.Name = "ノード10";
+            treeNode7.Name = "h7";
             treeNode7.Text = "石狩・空知・後志地方";
-            treeNode8.Name = "ノード11";
+            treeNode8.Name = "h8";
             treeNode8.Text = "渡島・檜山地方";
             treeNode9.Name = "Hokkaidou";
             treeNode9.Text = "北海道";
-            treeNode10.Name = "ノード12";
+            treeNode10.Name = "t1";
             treeNode10.Text = "青森県";
-            treeNode11.Name = "ノード13";
+            treeNode11.Name = "t2";
             treeNode11.Text = "岩手県";
-            treeNode12.Name = "ノード14";
+            treeNode12.Name = "t3";
             treeNode12.Text = "宮城県";
-            treeNode13.Name = "ノード15";
+            treeNode13.Name = "t4";
             treeNode13.Text = "秋田県";
-            treeNode14.Name = "ノード16";
+            treeNode14.Name = "t5";
             treeNode14.Text = "山形県";
-            treeNode15.Name = "ノード17";
+            treeNode15.Name = "t6";
             treeNode15.Text = "福島県";
             treeNode16.Name = "Tohoku";
             treeNode16.Text = "東北地方";
-            treeNode17.Name = "ノード18";
+            treeNode17.Name = "k1";
             treeNode17.Text = "茨城県";
-            treeNode18.Name = "ノード19";
+            treeNode18.Name = "k2";
             treeNode18.Text = "栃木県";
-            treeNode19.Name = "ノード20";
+            treeNode19.Name = "k3";
             treeNode19.Text = "群馬県";
-            treeNode20.Name = "ノード21";
+            treeNode20.Name = "k4";
             treeNode20.Text = "埼玉県";
-            treeNode21.Name = "ノード22";
+            treeNode21.Name = "k5";
             treeNode21.Text = "千葉県";
-            treeNode22.Name = "ノード23";
+            treeNode22.Name = "k6";
             treeNode22.Text = "東京都";
-            treeNode23.Name = "ノード24";
+            treeNode23.Name = "k7";
             treeNode23.Text = "神奈川県";
-            treeNode24.Name = "ノード43";
+            treeNode24.Name = "k8";
             treeNode24.Text = "山梨県";
-            treeNode25.Name = "ノード44";
+            treeNode25.Name = "k9";
             treeNode25.Text = "長野県";
             treeNode26.Name = "Kanto";
             treeNode26.Text = "関東甲信地方";
-            treeNode27.Name = "ノード29";
+            treeNode27.Name = "tk1";
             treeNode27.Text = "岐阜県";
-            treeNode28.Name = "ノード30";
+            treeNode28.Name = "tk2";
             treeNode28.Text = "静岡県";
-            treeNode29.Name = "ノード31";
+            treeNode29.Name = "tk3";
             treeNode29.Text = "愛知県";
-            treeNode30.Name = "ノード32";
+            treeNode30.Name = "tk4";
             treeNode30.Text = "三重県";
             treeNode31.Name = "Chubu";
             treeNode31.Text = "東海地方";
-            treeNode32.Name = "ノード33";
+            treeNode32.Name = "hk1";
             treeNode32.Text = "新潟県";
-            treeNode33.Name = "ノード34";
+            treeNode33.Name = "hk2";
             treeNode33.Text = "富山県";
-            treeNode34.Name = "ノード35";
+            treeNode34.Name = "hk3";
             treeNode34.Text = "石川県";
-            treeNode35.Name = "ノード36";
+            treeNode35.Name = "hk4";
             treeNode35.Text = "福井県";
             treeNode36.Name = "Kansai";
             treeNode36.Text = "北陸地方";
-            treeNode37.Name = "ノード37";
+            treeNode37.Name = "kk1";
             treeNode37.Text = "滋賀県";
-            treeNode38.Name = "ノード38";
+            treeNode38.Name = "kk2";
             treeNode38.Text = "京都府";
-            treeNode39.Name = "ノード39";
+            treeNode39.Name = "kk3";
             treeNode39.Text = "大阪府";
-            treeNode40.Name = "ノード40";
+            treeNode40.Name = "kk4";
             treeNode40.Text = "兵庫県";
-            treeNode41.Name = "ノード41";
+            treeNode41.Name = "kk5";
             treeNode41.Text = "奈良県";
-            treeNode42.Name = "ノード42";
+            treeNode42.Name = "kk6";
             treeNode42.Text = "和歌山県";
             treeNode43.Name = "Chugoku";
             treeNode43.Text = "近畿地方";
-            treeNode44.Name = "ノード45";
+            treeNode44.Name = "c1";
             treeNode44.Text = "鳥取県";
-            treeNode45.Name = "ノード46";
+            treeNode45.Name = "c2";
             treeNode45.Text = "島根県";
-            treeNode46.Name = "ノード47";
+            treeNode46.Name = "c3";
             treeNode46.Text = "岡山県";
-            treeNode47.Name = "ノード48";
+            treeNode47.Name = "c4";
             treeNode47.Text = "広島県";
             treeNode48.Name = "Shikoku";
             treeNode48.Text = "中国地方";
-            treeNode49.Name = "ノード49";
+            treeNode49.Name = "s1";
             treeNode49.Text = "徳島県";
-            treeNode50.Name = "ノード50";
+            treeNode50.Name = "s2";
             treeNode50.Text = "香川県";
-            treeNode51.Name = "ノード51";
+            treeNode51.Name = "s3";
             treeNode51.Text = "愛媛県";
-            treeNode52.Name = "ノード52";
+            treeNode52.Name = "s4";
             treeNode52.Text = "高知県";
             treeNode53.Name = "ノード7";
             treeNode53.Text = "四国地方";
-            treeNode54.Name = "ノード53";
+            treeNode54.Name = "ks1";
             treeNode54.Text = "山口県";
-            treeNode55.Name = "ノード54";
+            treeNode55.Name = "ks2";
             treeNode55.Text = "福島県";
-            treeNode56.Name = "ノード55";
+            treeNode56.Name = "ks3";
             treeNode56.Text = "佐賀県";
-            treeNode57.Name = "ノード56";
+            treeNode57.Name = "ks4";
             treeNode57.Text = "長崎県";
-            treeNode58.Name = "ノード57";
+            treeNode58.Name = "ks5";
             treeNode58.Text = "熊本県";
-            treeNode59.Name = "ノード58";
+            treeNode59.Name = "ks6";
             treeNode59.Text = "大分県";
             treeNode60.Name = "ノード26";
             treeNode60.Text = "九州北部地方";
-            treeNode61.Name = "ノード59";
+            treeNode61.Name = "kn1";
             treeNode61.Text = "宮崎県";
-            treeNode62.Name = "ノード60";
+            treeNode62.Name = "kn2";
             treeNode62.Text = "奄美地方";
-            treeNode63.Name = "ノード61";
+            treeNode63.Name = "kn3";
             treeNode63.Text = "鹿児島県（奄美地方除く）";
             treeNode64.Name = "ノード27";
             treeNode64.Text = "九州南部地方・奄美";
@@ -346,7 +352,7 @@ namespace WeatherApp {
             treeNode60,
             treeNode64,
             treeNode69});
-            this.tvArea.Size = new System.Drawing.Size(210, 531);
+            this.tvArea.Size = new System.Drawing.Size(266, 531);
             this.tvArea.TabIndex = 1;
             this.tvArea.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvArea_AfterSelect);
             // 
@@ -355,7 +361,7 @@ namespace WeatherApp {
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Info;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(243, 30);
+            this.label1.Location = new System.Drawing.Point(320, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 27);
             this.label1.TabIndex = 2;
@@ -366,7 +372,7 @@ namespace WeatherApp {
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Info;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(442, 30);
+            this.label2.Location = new System.Drawing.Point(519, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 27);
             this.label2.TabIndex = 2;
@@ -377,7 +383,7 @@ namespace WeatherApp {
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Info;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(633, 30);
+            this.label3.Location = new System.Drawing.Point(710, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 27);
             this.label3.TabIndex = 2;
@@ -385,7 +391,7 @@ namespace WeatherApp {
             // 
             // pb1
             // 
-            this.pb1.Location = new System.Drawing.Point(248, 125);
+            this.pb1.Location = new System.Drawing.Point(325, 125);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(137, 72);
             this.pb1.TabIndex = 3;
@@ -398,7 +404,7 @@ namespace WeatherApp {
             this.メニューToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(836, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(910, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -413,13 +419,13 @@ namespace WeatherApp {
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.終了ToolStripMenuItem.Text = "終了";
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.終了ToolStripMenuItem.Text = "アプリ終了";
             this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
             // 
             // pb2
             // 
-            this.pb2.Location = new System.Drawing.Point(446, 125);
+            this.pb2.Location = new System.Drawing.Point(523, 125);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(137, 72);
             this.pb2.TabIndex = 3;
@@ -427,7 +433,7 @@ namespace WeatherApp {
             // 
             // pb3
             // 
-            this.pb3.Location = new System.Drawing.Point(663, 125);
+            this.pb3.Location = new System.Drawing.Point(740, 125);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(137, 72);
             this.pb3.TabIndex = 3;
@@ -439,7 +445,7 @@ namespace WeatherApp {
             this.label4.BackColor = System.Drawing.SystemColors.Info;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(265, 212);
+            this.label4.Location = new System.Drawing.Point(342, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 19);
             this.label4.TabIndex = 5;
@@ -451,7 +457,7 @@ namespace WeatherApp {
             this.label5.BackColor = System.Drawing.SystemColors.Info;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(467, 212);
+            this.label5.Location = new System.Drawing.Point(544, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 19);
             this.label5.TabIndex = 5;
@@ -463,7 +469,7 @@ namespace WeatherApp {
             this.label6.BackColor = System.Drawing.SystemColors.Info;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(684, 212);
+            this.label6.Location = new System.Drawing.Point(761, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 5;
@@ -475,7 +481,7 @@ namespace WeatherApp {
             this.label7.BackColor = System.Drawing.SystemColors.Info;
             this.label7.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(265, 288);
+            this.label7.Location = new System.Drawing.Point(342, 288);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 19);
             this.label7.TabIndex = 5;
@@ -487,7 +493,7 @@ namespace WeatherApp {
             this.label8.BackColor = System.Drawing.SystemColors.Info;
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(684, 288);
+            this.label8.Location = new System.Drawing.Point(761, 288);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 19);
             this.label8.TabIndex = 5;
@@ -499,7 +505,7 @@ namespace WeatherApp {
             this.label9.BackColor = System.Drawing.SystemColors.Info;
             this.label9.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(467, 288);
+            this.label9.Location = new System.Drawing.Point(544, 288);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 5;
@@ -507,9 +513,11 @@ namespace WeatherApp {
             // 
             // tbOverview
             // 
-            this.tbOverview.Location = new System.Drawing.Point(305, 377);
+            this.tbOverview.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbOverview.Location = new System.Drawing.Point(382, 377);
             this.tbOverview.Multiline = true;
             this.tbOverview.Name = "tbOverview";
+            this.tbOverview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbOverview.Size = new System.Drawing.Size(516, 184);
             this.tbOverview.TabIndex = 6;
             // 
@@ -517,68 +525,68 @@ namespace WeatherApp {
             // 
             this.tbLowest1.BackColor = System.Drawing.Color.Salmon;
             this.tbLowest1.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLowest1.Location = new System.Drawing.Point(269, 234);
+            this.tbLowest1.Location = new System.Drawing.Point(346, 234);
             this.tbLowest1.Multiline = true;
             this.tbLowest1.Name = "tbLowest1";
             this.tbLowest1.Size = new System.Drawing.Size(81, 47);
-            this.tbLowest1.TabIndex = 7;
+            this.tbLowest1.TabIndex = 1;
             // 
             // tbLowest2
             // 
             this.tbLowest2.BackColor = System.Drawing.Color.Khaki;
             this.tbLowest2.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLowest2.Location = new System.Drawing.Point(471, 234);
+            this.tbLowest2.Location = new System.Drawing.Point(548, 234);
             this.tbLowest2.Multiline = true;
             this.tbLowest2.Name = "tbLowest2";
             this.tbLowest2.Size = new System.Drawing.Size(81, 47);
-            this.tbLowest2.TabIndex = 7;
+            this.tbLowest2.TabIndex = 3;
             // 
             // tbLowest3
             // 
             this.tbLowest3.BackColor = System.Drawing.Color.MediumPurple;
             this.tbLowest3.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLowest3.Location = new System.Drawing.Point(688, 234);
+            this.tbLowest3.Location = new System.Drawing.Point(765, 234);
             this.tbLowest3.Multiline = true;
             this.tbLowest3.Name = "tbLowest3";
             this.tbLowest3.Size = new System.Drawing.Size(81, 47);
-            this.tbLowest3.TabIndex = 7;
+            this.tbLowest3.TabIndex = 5;
             // 
             // tbMax2
             // 
             this.tbMax2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tbMax2.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMax2.Location = new System.Drawing.Point(471, 310);
+            this.tbMax2.Location = new System.Drawing.Point(548, 310);
             this.tbMax2.Multiline = true;
             this.tbMax2.Name = "tbMax2";
             this.tbMax2.Size = new System.Drawing.Size(76, 47);
-            this.tbMax2.TabIndex = 7;
+            this.tbMax2.TabIndex = 4;
             // 
             // tbMax1
             // 
             this.tbMax1.BackColor = System.Drawing.Color.SpringGreen;
             this.tbMax1.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMax1.Location = new System.Drawing.Point(269, 310);
+            this.tbMax1.Location = new System.Drawing.Point(346, 310);
             this.tbMax1.Multiline = true;
             this.tbMax1.Name = "tbMax1";
             this.tbMax1.Size = new System.Drawing.Size(81, 47);
-            this.tbMax1.TabIndex = 7;
+            this.tbMax1.TabIndex = 2;
             // 
             // tbMax3
             // 
             this.tbMax3.BackColor = System.Drawing.Color.Plum;
             this.tbMax3.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMax3.Location = new System.Drawing.Point(688, 310);
+            this.tbMax3.Location = new System.Drawing.Point(765, 310);
             this.tbMax3.Multiline = true;
             this.tbMax3.Name = "tbMax3";
             this.tbMax3.Size = new System.Drawing.Size(81, 47);
-            this.tbMax3.TabIndex = 7;
+            this.tbMax3.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.Info;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(553, 253);
+            this.label10.Location = new System.Drawing.Point(630, 253);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 23);
             this.label10.TabIndex = 8;
@@ -589,7 +597,7 @@ namespace WeatherApp {
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.Info;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(770, 253);
+            this.label11.Location = new System.Drawing.Point(847, 253);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 23);
             this.label11.TabIndex = 8;
@@ -600,7 +608,7 @@ namespace WeatherApp {
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.Info;
             this.label12.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(770, 330);
+            this.label12.Location = new System.Drawing.Point(847, 330);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 23);
             this.label12.TabIndex = 8;
@@ -611,7 +619,7 @@ namespace WeatherApp {
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.Info;
             this.label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(553, 330);
+            this.label13.Location = new System.Drawing.Point(630, 330);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(30, 23);
             this.label13.TabIndex = 8;
@@ -622,7 +630,7 @@ namespace WeatherApp {
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.SystemColors.Info;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(352, 330);
+            this.label14.Location = new System.Drawing.Point(429, 330);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 23);
             this.label14.TabIndex = 8;
@@ -633,7 +641,7 @@ namespace WeatherApp {
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.Info;
             this.label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(352, 253);
+            this.label15.Location = new System.Drawing.Point(429, 253);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 23);
             this.label15.TabIndex = 8;
@@ -644,7 +652,7 @@ namespace WeatherApp {
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.SystemColors.Info;
             this.label16.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(224, 379);
+            this.label16.Location = new System.Drawing.Point(301, 379);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 33);
             this.label16.TabIndex = 9;
@@ -652,35 +660,73 @@ namespace WeatherApp {
             // 
             // tb1
             // 
-            this.tb1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tb1.Location = new System.Drawing.Point(218, 75);
+            this.tb1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tb1.Location = new System.Drawing.Point(295, 60);
             this.tb1.Multiline = true;
             this.tb1.Name = "tb1";
-            this.tb1.Size = new System.Drawing.Size(194, 35);
+            this.tb1.Size = new System.Drawing.Size(194, 50);
             this.tb1.TabIndex = 10;
             // 
             // tb2
             // 
-            this.tb2.Location = new System.Drawing.Point(418, 75);
+            this.tb2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tb2.Location = new System.Drawing.Point(495, 60);
             this.tb2.Multiline = true;
             this.tb2.Name = "tb2";
-            this.tb2.Size = new System.Drawing.Size(194, 35);
+            this.tb2.Size = new System.Drawing.Size(194, 50);
             this.tb2.TabIndex = 10;
             // 
             // tb3
             // 
-            this.tb3.Location = new System.Drawing.Point(627, 75);
+            this.tb3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tb3.Location = new System.Drawing.Point(704, 60);
             this.tb3.Multiline = true;
             this.tb3.Name = "tb3";
-            this.tb3.Size = new System.Drawing.Size(194, 35);
+            this.tb3.Size = new System.Drawing.Size(194, 50);
             this.tb3.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.pictureBox1.Image = global::WeatherApp.Properties.Resources.てるてる坊主_1024x1024;
+            this.pictureBox1.Location = new System.Drawing.Point(274, 467);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(79, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Info;
+            this.pictureBox2.Image = global::WeatherApp.Properties.Resources.曇りのち晴れ_1024x1024;
+            this.pictureBox2.Location = new System.Drawing.Point(678, 299);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Info;
+            this.pictureBox3.Image = global::WeatherApp.Properties.Resources.free2_77;
+            this.pictureBox3.Location = new System.Drawing.Point(474, 299);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(68, 74);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WeatherApp.Properties.Resources.ダウンロード;
-            this.ClientSize = new System.Drawing.Size(836, 571);
+            this.ClientSize = new System.Drawing.Size(910, 571);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tb3);
             this.Controls.Add(this.tb2);
             this.Controls.Add(this.tb1);
@@ -714,11 +760,15 @@ namespace WeatherApp {
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "天気予報アプリ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,6 +808,9 @@ namespace WeatherApp {
         private System.Windows.Forms.TextBox tb1;
         private System.Windows.Forms.TextBox tb2;
         private System.Windows.Forms.TextBox tb3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
