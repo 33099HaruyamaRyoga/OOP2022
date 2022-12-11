@@ -93,16 +93,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ダウンロード.jpg" />
+    <None Include="Resources\ダウンロード.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\てるてる坊主-1024x1024.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\曇りのち晴れ-1024x1024.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\free2-77.png" />
+    <Content Include="Resources\87605.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
