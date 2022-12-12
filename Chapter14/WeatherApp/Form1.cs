@@ -57,11 +57,11 @@ namespace WeatherApp {
                 tb3.Text = json_w[0].timeSeries[0].areas[0].weathers[2];
 
                 tbLowest1.Text = json_w[1].timeSeries[1].areas[0].tempsMin[1];
-                tbMax1.Text = json_w[1].timeSeries[1].areas[0].tempsMax[2];
-                tbLowest2.Text = json_w[1].timeSeries[1].areas[0].tempsMin[3];
-                tbMax2.Text = json_w[1].timeSeries[1].areas[0].tempsMax[4];
-                tbLowest3.Text = json_w[1].timeSeries[1].areas[0].tempsMin[5];
-                tbMax3.Text = json_w[1].timeSeries[1].areas[0].tempsMax[6];
+                tbMax1.Text = json_w[1].timeSeries[1].areas[0].tempsMax[1];
+                tbLowest2.Text = json_w[1].timeSeries[1].areas[0].tempsMin[2];
+                tbMax2.Text = json_w[1].timeSeries[1].areas[0].tempsMax[2];
+                tbLowest3.Text = json_w[1].timeSeries[1].areas[0].tempsMin[3];
+                tbMax3.Text = json_w[1].timeSeries[1].areas[0].tempsMax[3];
             }
             catch (Exception) {
 
